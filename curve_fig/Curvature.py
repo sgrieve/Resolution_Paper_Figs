@@ -70,7 +70,7 @@ labels = [''] + list(string.ascii_lowercase)[:6]
 colors = ['b', 'k', 'r']
 pdf_expand = [[2.25, 1.6], [1.25, 1.], [3.75, 2.]]
 
-Path = '/home/s0675405/Len_Figs/curve_data/'
+Path = '/home/s0675405/Resolution_Paper_Figs/curve_data/'
 CurvType = 6
 
 TitlePad = [0.025, 0, 0]

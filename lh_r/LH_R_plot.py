@@ -86,7 +86,7 @@ pdf_expand = [[2.25, 1.6], [1.25, 1.], [3.75, 2.]]
 pdf_expand_LH = [2.8, 5., 2.8]
 pdf_expand_R = [1.5, 1.9, 2.3]
 
-Path = '/home/s0675405/Len_Figs/lh_r_data/'
+Path = '/home/s0675405/Resolution_Paper_Figs/lh_r_data/'
 CurvType = 6
 
 TitlePad = [0.025, 0, 0]

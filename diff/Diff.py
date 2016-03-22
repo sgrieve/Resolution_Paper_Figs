@@ -60,7 +60,7 @@ fig = plt.figure()
 
 for i, q in enumerate(['SC', 'GM', 'OR']):
 
-    CurvData = LoadData(q, '/home/s0675405/Len_Figs/curve_data/')
+    CurvData = LoadData(q, '/home/s0675405/Resolution_Paper_Figs/curve_data/')
 
     CHTs = np.array(CurvData[3])
 

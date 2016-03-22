@@ -144,7 +144,7 @@ def Process(files):
     # full page = 190*230
     fig.set_size_inches(mm_to_inch(178), mm_to_inch(120))
 
-    plt.savefig('/home/s0675405/Len_Figs/hillshade_fig/Hillshades_fig.png',
+    plt.savefig('/home/s0675405/Resolution_Paper_Figs/hillshade_fig/HS_fig.png',
                 dpi=500)
 
 
@@ -152,7 +152,7 @@ def Make_The_Figure():
     """
     All filenames and paths to data are modifed here in this wrapper
     """
-    path = '/home/s0675405/Len_Figs/hillshade_fig/'
+    path = '/home/s0675405/Resolution_Paper_Figs/hillshade_fig/'
     Hillshade_files = ['sc1.flt', 'sc2.flt', 'sc5.flt', 'sc10.flt', 'sc20.flt',
                        'sc30.flt']
 

@@ -6,6 +6,7 @@
 *.prj
 
 9_panel_old.py
+shapefile.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -155,7 +155,7 @@ def Process(files):
     # full page = 190*230
     fig.set_size_inches(mm_to_inch(174), mm_to_inch(120))
 
-    plt.savefig('/home/s0675405/Len_Figs/spatial_curve/spat_curv.png',
+    plt.savefig('/home/s0675405/Resolution_Paper_Figs/spatial_curve/s_curv.png',
                 dpi=500)
 
 
@@ -163,7 +163,7 @@ def Make_The_Figure():
     """
     All filenames and paths to data are modifed here in this wrapper
     """
-    path = '/home/s0675405/Len_Figs/spatial_curve/'
+    path = '/home/s0675405/Resolution_Paper_Figs/spatial_curve/'
     Curv_files = ['sc1_curv.flt', 'sc2_curv.flt', 'sc5_curv.flt',
                   'sc10_curv.flt', 'sc20_curv.flt', 'sc30_curv.flt']
 
