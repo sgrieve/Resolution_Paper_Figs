@@ -5,6 +5,8 @@
 *.hdr
 *.prj
 
+9_panel_old.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
