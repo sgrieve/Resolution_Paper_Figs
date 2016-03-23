@@ -87,10 +87,12 @@ plt.xlim(xmin=0, xmax=10.5)
 legend = plt.legend(scatterpoints=1, fontsize=10)
 legend.get_frame().set_linewidth(0.)
 
+fig.subplots_adjust(bottom=0.15)
+
 # set the size of the plot to be saved. These are the JGR sizes:
 # quarter page = 95*115
 # half page = 190*115 (horizontal) 95*230 (vertical)
 # full page = 190*230
 fig.set_size_inches(mm_to_inch(190), mm_to_inch(115))
 
-plt.savefig('diff/diff.tif', dpi=500)
+plt.savefig('diff/diff.png', dpi=500)
