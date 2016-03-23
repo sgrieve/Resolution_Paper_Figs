@@ -4,6 +4,12 @@
 *.flt
 *.hdr
 *.prj
+*.shp
+*.dbf
+*.sbx
+*.shp.xml
+*.shx
+*.sbn
 
 9_panel_old.py
 shapefile.py
