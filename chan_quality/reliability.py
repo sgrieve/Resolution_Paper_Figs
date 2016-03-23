@@ -37,7 +37,7 @@ for a, i in enumerate([1, 3, 5]):
     plt.subplot(3, 2, i)
 
     if not a:
-        plt.title('Pelletier')
+        plt.title('Geometric')
 
     plt.plot(Resolutions, r_pelletier[a], 'k-')
     plt.plot(Resolutions, s_pelletier[a], 'k--')
