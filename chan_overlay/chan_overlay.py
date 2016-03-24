@@ -84,6 +84,9 @@ def Process(files):
                             pad=0)
             plt.yticks(ylocs, new_y_labels)
             plt.xticks(xlocs, new_x_labels, rotation=0)
+            plt.xlabel('Santa Cruz Island', fontsize=10)
+            ax.xaxis.set_label_position("top")
+            # ax.xaxis.labelpad = 15
         if (i == 2):  # middle top
             ax.xaxis.tick_top()
             plt.tick_params(axis='x', which='both', bottom='off', length=2,
@@ -92,6 +95,8 @@ def Process(files):
                             length=2)
             ax.axes.get_yaxis().set_ticklabels([])
             plt.xticks(xlocs, new_x_labels, rotation=0)
+            plt.xlabel('Gabilan Mesa', fontsize=10)
+            ax.xaxis.set_label_position("top")
         if (i == 3):  # top right
             ax.xaxis.tick_top()
             ax.yaxis.tick_right()
@@ -102,6 +107,8 @@ def Process(files):
             plt.ylabel('DrEICH method', fontsize=10)
             ax.yaxis.set_label_position("right")
             ax.axes.get_yaxis().set_ticklabels([])
+            plt.xlabel('Oregon Coast Range', fontsize=10)
+            ax.xaxis.set_label_position("top")
         if (i == 4):  # bottom left
             plt.tick_params(axis='x', which='both', top='off', length=2)
             plt.tick_params(axis='y', which='both', right='off', length=2,
@@ -150,12 +157,12 @@ def Process(files):
              rotation='vertical', size=10)
 
     plt.tight_layout()
-    fig.subplots_adjust(hspace=0.002, wspace=0.08, bottom=0.095, top=0.95)
+    fig.subplots_adjust(hspace=0.002, wspace=0.08, bottom=0.095, top=0.915)
 
     # quarter page = 95*115
     # half page = 190*115 (horizontal) 95*230 (vertical)
     # full page = 190*230
-    fig.set_size_inches(mm_to_inch(178), mm_to_inch(120))
+    fig.set_size_inches(mm_to_inch(190), mm_to_inch(130))
 
     plt.savefig('/home/s0675405/Resolution_Paper_Figs/chan_overlay/Chan_over.png',
                 dpi=500)
