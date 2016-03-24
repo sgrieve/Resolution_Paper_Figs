@@ -55,6 +55,7 @@ Errs = [0.000007, 0.0003, 0.00005]
 Es_uncert = unp.uarray(Es, Errs)
 
 colors = ['b', 'k', 'r']
+shapes = ['o', '^', 's']
 
 fig = plt.figure()
 
@@ -73,8 +74,8 @@ for i, q in enumerate(['SC', 'GM', 'OR']):
     plt.gca().set_yscale('log', nonposy='clip')
     plt.errorbar(Resolutions, unp.nominal_values(Ds_u), yerr=unp.std_devs(Ds_u),
                  fmt='', color=colors[i], linestyle="None")
-    plt.scatter(Resolutions, Ds_no_u, color=colors[i], label=Locations[q])
-
+    plt.scatter(Resolutions, Ds_no_u, color=colors[i], marker=shapes[i],
+                label=Locations[q])
 
 plt.xlabel("Grid resolution ($m$)")
 plt.ylabel("Diffusivity ($m^{2}a^{-1}$)")
