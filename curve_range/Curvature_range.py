@@ -48,21 +48,6 @@ def LoadCurvData(Prefix, CurvType, InPath):
     return Data
 
 
-def LoadPDF(Path, Prefix, CurvType, Res):
-
-    if CurvType:
-        name = '_' + str(Res) + '_Hist_' + str(CurvType) + '.txt'
-    else:
-        name = '_' + str(Res) + '_Hist_CHT.txt'
-
-    filename = Path + Prefix + name
-    data = np.genfromtxt(filename, delimiter=' ', skip_header=1)
-
-    pdfs = data[:, 4]
-    bin_centers = data[:, 0]
-
-    return pdfs, bin_centers
-
 Resolutions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 labels = [''] + list(string.ascii_lowercase)[:6]
@@ -71,7 +56,7 @@ Path = '/home/s0675405/Resolution_Paper_Figs/curve_data/'
 CurvType = 6
 
 TitlePad = [0.025, 0, 0]
-LocationY = [0.15, 0.035, 0.175]
+LocationY = [0.14, 0.035, 0.175]
 
 SubplotLocations = [[1, 2], [3, 4], [5, 6]]
 
