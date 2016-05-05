@@ -34,7 +34,7 @@ Omega = (2 * np.pi) / L
 DeltaX = np.arange(0.001, 5, 0.001)
 
 plt.plot(DeltaX / L, CurvatureFidelity(Omega, DeltaX), 'k-', label='Curvature')
-plt.plot(DeltaX / L, SlopeFidelity(Omega, DeltaX), 'k--', label='Slope')
+plt.plot(DeltaX / L, SlopeFidelity(Omega, DeltaX), 'k--', label='Gradient')
 
 plt.ylim(0.0, 1.0)
 plt.tick_params(axis='x', which='both', top='off', length=2)
