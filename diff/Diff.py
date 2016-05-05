@@ -21,7 +21,7 @@ def LoadData(Prefix, InPath):
     X_coord, PC2, PC25, Median, Mean, PC75, PC98, Minimum, Maximum
     """
 
-    with open(InPath + Prefix + '_ChtResData_noscaling.txt', 'r') as f:
+    with open(InPath + Prefix + '_ChtResData.txt', 'r') as f:
         f.readline()
         data = f.readlines()
 
@@ -78,7 +78,7 @@ for i, q in enumerate(['SC', 'GM', 'OR']):
                 label=Locations[q])
 
 plt.xlabel("Grid resolution ($m$)")
-plt.ylabel("Diffusivity ($m^{2}a^{-1}$)")
+plt.ylabel("Sediment transport coefficient ($D$, $m^{2}a^{-1}$)")
 
 plt.tick_params(axis='x', which='both', top='off', length=2)
 plt.tick_params(axis='y', which='both', right='off', length=2)
