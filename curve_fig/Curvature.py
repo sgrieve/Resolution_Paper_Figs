@@ -27,9 +27,9 @@ def LoadCurvData(Prefix, CurvType, InPath):
     """
 
     if CurvType:
-        name = '_CurvatureResData_' + str(CurvType) + '_noscaling.txt'
+        name = '_CurvatureResData_' + str(CurvType) + '.txt'
     else:
-        name = '_ChtResData_noscaling.txt'
+        name = '_ChtResData.txt'
 
     with open(InPath + Prefix + name, 'r') as f:
         f.readline()

@@ -19,19 +19,19 @@ def mm_to_inch(mm):
     return mm * 0.0393700787
 
 
-def LoadCurvData(Prefix, CurvType, InPath):
+def LoadLHRData(Prefix, DataType, InPath):
     """
     Load the data into a 2d array with the column format:
 
     X_coord, PC2, PC25, Median, Mean, PC75, PC98, Minimum, Maximum
     """
-    if (CurvType[:2] == 'LH'):
-        name = '_LHResData_new_fix.txt'
-        if (len(CurvType) > 2):
+    if (DataType[:2] == 'LH'):
+        name = '_LHResData.txt'
+        if (len(DataType) > 2):
             name = name.split('.')[0] + '_variable.txt'
-    elif (CurvType[:1] == 'R'):
-        name = '_RResData_new_fix.txt'
-        if (len(CurvType) > 1):
+    elif (DataType[:1] == 'R'):
+        name = '_RResData.txt'
+        if (len(DataType) > 1):
             name = name.split('.')[0] + '_variable.txt'
     else:
         name = ''
@@ -53,15 +53,15 @@ def LoadCurvData(Prefix, CurvType, InPath):
     return Data
 
 
-def LoadPDF(Path, Prefix, CurvType, Res):
+def LoadPDF(Path, Prefix, DataType, Res):
 
-    if (CurvType[:2] == 'LH'):
-        name = '_Hist_LH_' + str(Res) + '_tues.txt'
-        if (len(CurvType) > 2):
+    if (DataType[:2] == 'LH'):
+        name = '_Hist_LH_' + str(Res) + '.txt'
+        if (len(DataType) > 2):
             name = name.split('.')[0] + '_variable.txt'
-    elif (CurvType[:1] == 'R'):
-        name = '_Hist_R_' + str(Res) + '_tues.txt'
-        if (len(CurvType) > 1):
+    elif (DataType[:1] == 'R'):
+        name = '_Hist_R_' + str(Res) + '.txt'
+        if (len(DataType) > 1):
             name = name.split('.')[0] + '_variable.txt'
     else:
         name = ''
@@ -87,7 +87,6 @@ pdf_expand_LH = [2.8, 5., 2.8]
 pdf_expand_R = [1.5, 1.9, 2.3]
 
 Path = '/home/s0675405/Resolution_Paper_Figs/lh_r_data/'
-CurvType = 6
 
 TitlePad = [0.025, 0, 0]
 
@@ -99,11 +98,11 @@ for i, q in enumerate(['SC', 'GM', 'OR']):
 
     for j, w in enumerate(['LH', 'R', 'LH_variable', 'R_variable']):
 
-        CurvData = LoadCurvData(q, w, Path)
+        LHRData = LoadLHRData(q, w, Path)
 
-        Curvs = np.array(CurvData[3])
-        Curvs_low = Curvs - np.array(CurvData[2])
-        Curvs_high = np.array(CurvData[5]) - Curvs
+        LHR = np.array(LHRData[3])
+        LHR_low = LHR - np.array(LHRData[2])
+        LHR_high = np.array(LHRData[5]) - LHR
 
         ax = plt.subplot(2, 2, j + 1)
 
@@ -111,12 +110,12 @@ for i, q in enumerate(['SC', 'GM', 'OR']):
                      xycoords='axes fraction', fontsize=12,
                      horizontalalignment='left', verticalalignment='top')
 
-        BoxPlotter.BoxPlot(CurvData[1], CurvData[2], CurvData[3],
-                           CurvData[4], CurvData[5], CurvData[6],
-                           CurvData[0], 0.4)
+        BoxPlotter.BoxPlot(LHRData[1], LHRData[2], LHRData[3],
+                           LHRData[4], LHRData[5], LHRData[6],
+                           LHRData[0], 0.4)
 
-        LowWhisk = CurvData[1]
-        HighWhisk = CurvData[6]
+        LowWhisk = LHRData[1]
+        HighWhisk = LHRData[6]
         plt.ylim(np.min(LowWhisk) * 1.05, np.max(HighWhisk) * 1.05)
 
         for a in range(1, 11) + range(12, 31, 2):
