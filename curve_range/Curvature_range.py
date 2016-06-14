@@ -90,9 +90,9 @@ for i, q in enumerate(['SC', 'GM', 'OR']):
         Whisker_range = HighWhisk - LowWhisk
         IQR = CurvData[5] - CurvData[2]
 
-        plt.plot(CurvData[0], Whisker_range, 'b.',
+        plt.plot(CurvData[0], Whisker_range, 'b^',
                  label='2nd-98th percentile range')
-        plt.plot(CurvData[0], IQR, 'r.', label='Inter-quartile range')
+        plt.plot(CurvData[0], IQR, 'ro', label='Inter-quartile range')
 
         plt.ylim(0, Ymaxes[i][j])
 
